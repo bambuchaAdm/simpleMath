@@ -14,8 +14,9 @@ import java.util.List;
 public class Factorizer
 {
 
-	private int[]	primes;
-
+	/**
+	 * Standardowy konsturktor
+	 */
 	public Factorizer()
 	{
 		// TODO Auto-generated constructor stub
