@@ -2,7 +2,6 @@ package org.bambucha.math;
 
 import static org.fest.assertions.Assertions.assertThat;
 
-import java.util.Arrays;
 import java.util.Iterator;
 
 import org.junit.Before;
