@@ -1,9 +1,10 @@
 package org.bambucha.math;
 
-import static org.junit.Assert.*;
-import static org.junit.Assert.fail;
+import static org.fest.assertions.Assertions.assertThat;
 
-import static org.fest.assertions.Assertions.*;
+import java.util.Arrays;
+import java.util.Iterator;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -42,22 +43,34 @@ public class PrimeSetTest
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void zeroIsNotPrime() throws Exception
+	public void zeroIsNotPrimeAndNotComplex() throws Exception
 	{
 		test.isPrime(0);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
-	public void isNegativePrime() throws Exception
+	public void negativeIsNotSupportedPrime() throws Exception
 	{
 		test.isPrime(-1);
 	}
 
 	@Test
-	public void testIterator()
+	public void getIterator()
 	{
 		test.isPrime(5);
-		assertThat(test.iterator()).isNotNull();
+		assertThat(test.iterator()).isNotNull().hasSize(3)
+				.doesNotHaveDuplicates();
 	}
 
+	@Test(expected = UnsupportedOperationException.class)
+	public void immutableCollecitonUnderIterator() throws Exception
+	{
+		// given
+		test.isPrime(5);
+		Iterator<Long> iter = test.iterator();
+		// when
+		iter.next();
+		// then
+		iter.remove();
+	}
 }

@@ -1,8 +1,6 @@
 package org.bambucha.math;
 
-import static org.fest.assertions.Assertions.*;
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
+import static org.fest.assertions.Assertions.assertThat;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +12,7 @@ public class DivisorTest
 	@Before
 	public void setUp() throws Exception
 	{
-		new Divisor(1, 1);
+		test = new Divisor(1, 1);
 	}
 
 	@Test(expected = IllegalArgumentException.class)
@@ -23,13 +21,13 @@ public class DivisorTest
 		new Divisor(2, -2);
 	}
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void negativeValueInConstructor() throws Exception
 	{
 		new Divisor(-1, 0);
 	}
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void zeroTimesInConstrutor() throws Exception
 	{
 		new Divisor(1, 0);
