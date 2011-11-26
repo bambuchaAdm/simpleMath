@@ -21,7 +21,11 @@ public class Divisor
 	 */
 	public Divisor(int value, int times)
 	{
-
+		if(value < 1 || times < 1)
+			throw new IllegalArgumentException(
+					"Wartość i krotność muszą być dodatnie");
+		this.times = times;
+		this.value = value;
 	}
 
 	/**
@@ -29,7 +33,7 @@ public class Divisor
 	 * 
 	 * @return the value
 	 */
-	public int getValue()
+	public Integer getValue()
 	{
 		return value;
 	}
@@ -39,7 +43,7 @@ public class Divisor
 	 * 
 	 * @return the times
 	 */
-	public int getTimes()
+	public Integer getTimes()
 	{
 		return times;
 	}
