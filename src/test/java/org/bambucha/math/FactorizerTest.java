@@ -1,6 +1,8 @@
 package org.bambucha.math;
 
+import static org.fest.assertions.Assertions.*;
 import static org.fest.assertions.Assertions.assertThat;
+import static org.mockito.Mockito.*;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -51,5 +53,23 @@ public class FactorizerTest
 		List<Divisor> list = Arrays
 				.asList(new Divisor(1, 1), new Divisor(2, 2));
 		assertThat(comp(test.distribute(4), list)).isTrue();
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void oneIsNotSupported() throws Exception
+	{
+		test.distribute(1);
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void zeroIsNotSupported() throws Exception
+	{
+		test.distribute(0);
+	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void negativeIsNotSupported() throws Exception
+	{
+		test.distribute(-1);
 	}
 }
