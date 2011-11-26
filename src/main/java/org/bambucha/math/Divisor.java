@@ -48,4 +48,25 @@ public class Divisor
 		return times;
 	}
 
+	@Override
+	public boolean equals(Object obj)
+	{
+		if(obj == null)
+			return false;
+		if(!(obj instanceof Divisor))
+			return false;
+		if(obj == this)
+			return true;
+		Divisor o = (Divisor)obj;
+		if(times == o.times && value == o.value)
+			return true;
+
+		return false;
+	}
+
+	@Override
+	public String toString()
+	{
+		return "[" + value + ' ' + times + "]";
+	}
 }

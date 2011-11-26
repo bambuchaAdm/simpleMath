@@ -45,4 +45,43 @@ public class DivisorTest
 		assertThat(test.getTimes()).isEqualTo(1);
 	}
 
+	@Test
+	public void equalIsSymetric() throws Exception
+	{
+
+		Divisor two = new Divisor(1, 1);
+		Divisor three = new Divisor(2, 2);
+		assertThat(two.equals(test)).isEqualTo(test.equals(two));
+		assertThat(three.equals(test)).isEqualTo(test.equals(three));
+	}
+
+	@Test
+	public void equalsIsReflexible() throws Exception
+	{
+		assertThat(test.equals(test)).isTrue();
+	}
+
+	@Test
+	public void equalsIsTransitive() throws Exception
+	{
+		Divisor two = new Divisor(1, 1);
+		Divisor three = new Divisor(1, 1);
+		assertThat(test.equals(three)).isEqualTo(
+				test.equals(two) && two.equals(three));
+	}
+
+	@Test
+	public void secondTestFortRasitive() throws Exception
+	{
+		Divisor two = new Divisor(1, 1);
+		Divisor three = new Divisor(2, 1);
+		assertThat(test.equals(three)).isEqualTo(
+				test.equals(two) && two.equals(three));
+	}
+
+	@Test
+	public void notEqualasForNull() throws Exception
+	{
+		assertThat(test.equals(null)).isFalse();
+	}
 }
