@@ -22,7 +22,7 @@ public class Factorizer
 		// TODO Auto-generated constructor stub
 	}
 
-	List<Divisor> factorized(long number)
+	public List<Divisor> distribute(long number)
 	{
 		throw new UnsupportedOperationException();
 	}
