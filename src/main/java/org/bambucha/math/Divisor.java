@@ -65,6 +65,12 @@ public class Divisor
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return (int)(times + value);
+	}
+
+	@Override
 	public String toString()
 	{
 		return "(" + value + ' ' + times + ")";

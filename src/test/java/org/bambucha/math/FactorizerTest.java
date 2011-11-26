@@ -1,8 +1,6 @@
 package org.bambucha.math;
 
-import static org.fest.assertions.Assertions.*;
 import static org.fest.assertions.Assertions.assertThat;
-import static org.mockito.Mockito.*;
 
 import java.util.Arrays;
 import java.util.Iterator;
