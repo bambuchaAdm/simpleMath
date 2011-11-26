@@ -8,8 +8,8 @@ package org.bambucha.math;
  */
 public class Divisor
 {
-	private int	value;
-	private int	times;
+	private long	value;
+	private int		times;
 
 	/**
 	 * Buduje dzielnik
@@ -19,7 +19,7 @@ public class Divisor
 	 * @param times
 	 *            krotność dzielnika
 	 */
-	public Divisor(int value, int times)
+	public Divisor(long value, int times)
 	{
 		if(value < 1 || times < 1)
 			throw new IllegalArgumentException(
@@ -33,7 +33,7 @@ public class Divisor
 	 * 
 	 * @return the value
 	 */
-	public Integer getValue()
+	public Long getValue()
 	{
 		return value;
 	}
