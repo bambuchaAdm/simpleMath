@@ -67,6 +67,7 @@ public class Divisor
 	@Override
 	public String toString()
 	{
-		return "[" + value + ' ' + times + "]";
+		return "(" + value + ' ' + times + ")";
 	}
+
 }
