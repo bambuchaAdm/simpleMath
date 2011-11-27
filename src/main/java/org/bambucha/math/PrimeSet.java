@@ -66,8 +66,10 @@ public class PrimeSet implements Iterable<Long>
 			current++;
 		}
 		while(current * current < value);
+
 		while(!checkPrime(current++))
-			primes.add(current);
+		{}
+		primes.add(current);
 	}
 
 	/**

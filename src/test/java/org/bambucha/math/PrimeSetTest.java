@@ -1,6 +1,7 @@
 package org.bambucha.math;
 
 import static org.fest.assertions.Assertions.assertThat;
+import static org.junit.Assert.*;
 
 import java.util.Iterator;
 
@@ -35,6 +36,13 @@ public class PrimeSetTest
 		assertThat(test.isPrime(31)).isTrue();
 	}
 
+	@Test
+	public void bigPrimeTest() throws Exception
+	{
+		assertThat(test.isPrime(1000003)).isTrue();
+		assertThat(test.isPrime(8)).isFalse();
+	}
+
 	@Test(expected = IllegalArgumentException.class)
 	public void oneIsNotPrimeAndNotComplex() throws Exception
 	{
@@ -57,8 +65,7 @@ public class PrimeSetTest
 	public void getIterator()
 	{
 		test.isPrime(5);
-		assertThat(test.iterator()).isNotNull().hasSize(3)
-				.doesNotHaveDuplicates();
+		assertThat(test.iterator()).isNotNull().hasSize(3).doesNotHaveDuplicates();
 	}
 
 	@Test(expected = UnsupportedOperationException.class)
