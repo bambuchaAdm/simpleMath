@@ -58,16 +58,15 @@ public class PrimeSet implements Iterable<Long>
 
 	private void resize(long value)
 	{
-		long current = last() + 1;
+		long current = last();
 		do
 		{
-			if(checkPrime(current))
+			if(checkPrime(++current))
 				primes.add(current);
-			current++;
 		}
 		while(current * current < value);
 
-		while(!checkPrime(current++))
+		while(!checkPrime(++current))
 		{}
 		primes.add(current);
 	}
