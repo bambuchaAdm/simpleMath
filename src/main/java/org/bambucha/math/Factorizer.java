@@ -47,6 +47,13 @@ public class Factorizer
 		return times;
 	}
 
+	/**
+	 * Rozkłada liczbę na czyniki pierwsze
+	 * 
+	 * @param number
+	 *            liczba
+	 * @return lista czyników pierwszych
+	 */
 	public List<Divisor> distribute(long number)
 	{
 		List<Divisor> divisors = getDivisorListPrototype();
@@ -60,8 +67,7 @@ public class Factorizer
 			if(prime > number)
 				break;
 			if(isDivisor(number, prime.longValue()))
-				divisors.add(new Divisor(prime,
-						times(number, prime.longValue())));
+				divisors.add(new Divisor(prime, times(number, prime.longValue())));
 		}
 		return divisors;
 
